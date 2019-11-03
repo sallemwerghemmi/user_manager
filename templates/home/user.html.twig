@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formUser 'bootstrap_4_layout.html.twig' %}
+
+{%  block body %}
+		<h1>Creation d'un nouveau  article</h1>
+
+		{{ form_start(formUser) }}
+
+		{{ form_row(formUser.first_name, {'attr' : {'placeholder' : "Prénom "}}) }}
+		{{ form_row(formUser.last_name, {'attr' : {'placeholder' : "Nom"}}) }}
+		<button class="btn btn-success">Ajouter</button>
+		{{ form_end(formUser) }}
+
+{% endblock%}

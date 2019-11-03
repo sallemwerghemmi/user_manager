@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formGroup 'bootstrap_4_layout.html.twig' %}
+
+{%  block body %}
+		<h1>Creation d'un nouveau  groupe</h1>
+
+		{{ form_start(formGroup) }}
+
+				{{ form_row(formGroup.name, {'attr' : {'placeholder' : "Nom du groupe "}}) }}
+
+
+				<button type="submit" class="btn btn-success">Ajouter</button>
+
+		{{ form_end(formGroup) }}
+
+
+{% endblock%}

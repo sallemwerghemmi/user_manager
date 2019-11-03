@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{%  block body %}
+
+    <table id="mytable" class="table table-bordred table-striped">
+                       
+        <thead>
+              <th scope="col">Nom</th>
+              <th scope="col">Prénom</th>
+              <th scope="col">Groupe</th>
+              <th>Modifier</th>
+        </thead>
+        <tbody>
+        {% for user in users %}
+              <tr>
+                  <td>{{ user.FirstName }}</td>
+                  <td>{{ user.LastName }}</td>
+                
+                  <td>
+                            {% for groupe in user.groupes %}
+                              <span class="badge badge-primary">{{ groupe.name }} </span>
+                            {% endfor %}
+                  </td>
+                  <td>
+                    <button class="btn btn-info btn-xs" >
+                      <a href="{{ path('user_edit' ,{ 'id': user.id }) }}" style="color: white;text-decoration: none">Modifier</a>
+                    </button>
+                  </td>
+
+
+              </tr>
+     
+        {% endfor %}
+        </tbody>
+            
+      </table>
+
+{% endblock%}
